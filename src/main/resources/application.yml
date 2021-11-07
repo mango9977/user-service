@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://user01:TW14jjxk3rki12Au@cluster0.ffidi.mongodb.net/test
+      repositories:
+             enabled: true
+
