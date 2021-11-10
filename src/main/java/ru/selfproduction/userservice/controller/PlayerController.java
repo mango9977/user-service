@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.selfproduction.userservice.model.LikeUserObject;
 import ru.selfproduction.userservice.model.PlayerEntity;
+import ru.selfproduction.userservice.model.dto.UserLikesDto;
 import ru.selfproduction.userservice.service.LikeService;
 import ru.selfproduction.userservice.service.PlayerService;
 
@@ -38,13 +39,13 @@ public class PlayerController {
     }
 
     @GetMapping(path = "/likes/{userId}")
-    ResponseEntity<Integer> setPlayerLikes(
+    ResponseEntity<UserLikesDto> getPlayerLikes(
                   @PathVariable String userId
     ) {
         try {
             return ResponseEntity.ok(likeService.getLikes(userId));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(0);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
 
     }

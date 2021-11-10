@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.selfproduction.userservice.model.LikeEntity;
 import ru.selfproduction.userservice.model.LikeUserObject;
 import ru.selfproduction.userservice.model.PlayerEntity;
+import ru.selfproduction.userservice.model.dto.UserLikesDto;
 import ru.selfproduction.userservice.repository.PlayerRepository;
 
 import java.util.ArrayList;
@@ -44,8 +45,9 @@ public class LikeServiceImpl implements LikeService {
 
 
     @Override
-    public int getLikes(String playerId) {
+    public UserLikesDto getLikes(String playerId) {
+        UserLikesDto userLikesDto=new UserLikesDto();
         //TODO запрос на получение всего массива лайков по игрокам
-        return 0;
+        return  userLikesDto;
     }
 }
