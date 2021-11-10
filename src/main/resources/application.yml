@@ -1,7 +1,12 @@
+server:
+  port: 8099
+  forward-headers-strategy: none
+  servlet:
+    context-path: /web-service
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://user01:TW14jjxk3rki12Au@cluster0.ffidi.mongodb.net/test
+      uri: mongodb+srv://user01:TW14jjxk3rki12Au@cluster0.ffidi.mongodb.net/test?retryWrites=true&w=majority
       repositories:
              enabled: true
 
